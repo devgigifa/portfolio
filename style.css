@@ -451,3 +451,37 @@
         font-size: 1rem;
     }
 }
+
+
+/* Modifica a barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;  /* Largura da barra de rolagem */
+    height: 10px; /* Altura da barra de rolagem horizontal */
+  }
+  
+  /* Modifica o trilho (fundo) da barra de rolagem */
+  ::-webkit-scrollbar-track {
+    background: #484848; /* Cor de fundo do trilho */
+    /* border-radius: 10px; */
+  }
+  
+  /* Modifica o botão (thumb) da barra de rolagem */
+  ::-webkit-scrollbar-thumb {
+    background: #888;  /* Cor do botão */
+    border-radius: 10px;
+  }
+  
+  /* Quando o botão de rolagem é hover (passar o mouse por cima) */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #dcdcdc; /* Cor do botão ao passar o mouse */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);  /* Sombra interna */
+  }
+  /* Remove a barra de rolagem */
+/* ::-webkit-scrollbar {
+    display: none;
+  } */
+  
