@@ -164,6 +164,24 @@
     .texto-sobre-mim {
         max-width: 100%; /* O texto também ocupa a largura inteira na tela */
     }
+
+    .botoes-contato {
+        flex-wrap: wrap; /* Permite que os botões quebrem para a linha seguinte */
+        justify-content: space-around; /* Garante um espaçamento adequado */
+    }
+
+    .botoes-contato .button {
+        width: calc(50% - 1rem); /* Faz com que cada botão ocupe 50% da largura, menos o gap */
+        margin-bottom: 1rem; /* Adiciona espaço entre as linhas de botões */
+    }
+
+    .navbar a {
+        font-size: 16px; /* Diminui ainda mais o tamanho da fonte em telas muito pequenas */
+    }
+
+    .navbar li {
+        margin: 0 10px; /* Ajusta o espaçamento entre os itens */
+    }
 }
 
 
@@ -199,8 +217,6 @@
     width: 100%; /* Para ocupar a largura total da seção */
 }
 
-/* Cards de formação */
-/* Cards de formação */
 /* Cards de formação */
 .card {
     position: relative;
@@ -290,6 +306,7 @@
     align-items: center;
     padding: 20px;
     text-align: center;
+    z-index: 2;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -374,9 +391,11 @@
     border-radius: 10px;
 }
 
-.card-projeto h3 {
+.card-projeto a, h3 {
     margin-top: 10px;
     font-size: 1.5rem;
+    color: #FFF;
+    text-decoration: none;
 }
 
 .card-projeto p {
