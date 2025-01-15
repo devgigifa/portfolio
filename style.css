@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* MENU DE NAVEGAÇÃO */
+.navbar {
+    position: fixed;
+    top: 0;
+    padding: 30px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Garante que o menu fique sobreposto a todo o conteúdo */
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: #b19cd9;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* SECTION INICIO */
+.section-inicio {
+    height: 100vh;
+    background: url('imagens/3.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* Garantindo que o conteúdo não fique escondido abaixo do menu */
+}
+
+.intro-content h1 {
+    font-size: 4rem;
+    color: white;
+    font-size: 100px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.intro-content p {
+    font-size: 2rem;
+    color: #aaa;
+}
+
+/* SECTION SOBRE-MIM */
+.sobre-mim-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap; /* Permite que os itens "quebrem" para a linha seguinte em telas menores */
+    padding: 2rem;
+}
+
+.section-sobre-mim {
+    background: url('imagens/4.jpg') no-repeat center center/cover; /* Adiciona a imagem de fundo */
+    padding: 3rem 0; /* Define o espaçamento da seção */
+}
+
+/* Foto e texto sobre mim */
+.foto-texto {
+    flex: 1; /* A primeira parte ocupa 1/3 da largura */
+    max-width: 33%; /* Define a largura máxima para 1/3 da tela */
+    text-align: center;
+}
+
+.foto-texto img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #b19cd9;
+    margin-bottom: 1rem;
+}
+
+.foto-texto p {
+    color: #FFF;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Texto sobre mim */
+.texto-sobre-mim {
+    flex: 2; /* A segunda parte ocupa 2/3 da largura */
+    max-width: 66%; /* Define a largura máxima para 2/3 da tela */
+    color: #FFF;
+}
+
+.texto-sobre-mim h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.texto-sobre-mim p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botões de redes sociais */
+.botoes-contato {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.botoes-contato .button {
+    display: flex;
+    align-items: center;
+    border: 2px solid #b19cd9;
+    border-radius: 25px;
+    background-color: #000;
+    color: #FFF;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.botoes-contato .button .icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoes-contato .button:hover {
+    background-color: #b19cd9;
+    color: #000;
+}
+
+.botoes-contato .button:hover .icon {
+    background-color: #fff;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .sobre-mim-content {
+        flex-direction: column; /* Empilha os elementos verticalmente em telas menores */
+    }
+
+    .foto-texto {
+        max-width: 100%; /* A foto ocupa a largura inteira na tela */
+        margin-bottom: 2rem; /* Adiciona um espaçamento inferior entre a foto e o texto */
+    }
+
+    .texto-sobre-mim {
+        max-width: 100%; /* O texto também ocupa a largura inteira na tela */
+    }
+}
+
+
+/* SECTION FORMAÇÃO */
+.section-formacao {
+    display: flex; /* Usando flexbox para alinhar os cards */
+    justify-content: space-around; /* Espaça os cards igualmente */
+    flex-wrap: wrap; /* Mantém os cards em uma única linha */
+    padding: 20px; /* Padding da seção */
+    background: url('imagens/4.jpg') no-repeat center center/cover;
+    margin-top: 0; /* Garantir que não haja margem extra no topo */
+}
+
+.texto-formacao {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem; /* Distância entre o título e os cards */
+    margin-top: 50px; /* Aumenta o afastamento do topo */
+}
+
+
+.texto-formacao h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif; /* Certificando que o título tem a fonte desejada */
+    text-align: center; /* Título centralizado */
+}
+
+.formacao-content {
+    display: flex; /* Certifica-se de que os filhos estão em linha */
+    justify-content: space-around; /* Espaçamento entre os cards */
+    width: 100%; /* Para ocupar a largura total da seção */
+}
+
+/* Cards de formação */
+/* Cards de formação */
+/* Cards de formação */
+.card {
+    position: relative;
+    background-color: #000000e6;
+    color: #FFF;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5);
+    width: 32%; /* Largura dos cards (três cards por linha em telas grandes) */
+    max-width: 350px; /* Máxima largura de cada card */
+    text-align: center;
+    overflow: hidden;
+    padding: 20px; /* Aumentei o padding para maior espaçamento interno */
+    margin-bottom: 20px;
+    height: 450px; /* Aumentando a altura do card */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-img {
+    width: 100%;
+    height: 250px; /* Aumentando a altura da imagem */
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 15px; /* Espaçamento maior no conteúdo */
+}
+
+/* Responsividade e flexibilidade para telas menores */
+.section-formacao .formacao-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards "quebrem" para a linha seguinte em telas menores */
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 48%; /* Ajusta para dois cards por linha em telas entre 1024px e 768px */
+        height: 400px; /* Menor altura em telas menores */
+    }
+
+    .card-img {
+        height: 220px; /* Ajustando a altura da imagem para telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Ajustando para 1 card por linha em telas menores que 768px */
+        height: 350px; /* Ajustando a altura dos cards para telas pequenas */
+    }
+
+    .card-img {
+        height: 200px; /* Ajustando a altura da imagem para telas muito pequenas */
+    }
+}
+
+
+
+.card-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #b19cd9;
+}
+
+.card-type {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.card-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgb(0, 0, 0), 0 0 30px rgba(255, 255, 255, 1);
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+.card:hover .card-hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Lista de disciplinas */
+.disciplinas-lista {
+    list-style-type: disc; /* Bolinhas de lista */
+    padding-left: 20px; /* Alinha a lista */
+    text-align: left; /* Alinha o texto da lista à esquerda */
+    font-size: 1rem;
+    color: #fff; /* Garantir que o texto da lista tenha boa visibilidade */
+}
+
+.disciplinas-lista li {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+
+
+/* ............................... SECTION PROJETOS .....................................................*/
+.section-projetos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 5%;
+    background: url('imagens/4.jpg') no-repeat center center/cover;
+    background-size: cover;
+    margin-top: 0; /* Remover a margem entre as seções */
+    position: relative;
+    overflow: hidden; /* Garantindo que nada escape da área visível */
+}
+
+/* Cabeçalho com Título de Projetos */
+.projetos-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    z-index: 2; /* Garante que o título não seja sobreposto */
+}
+
+.projetos-header h2 {
+    font-size: 40px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro para visibilidade */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Cards de Projetos */
+.projetos-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem; /* Distância antes do botão */
+}
+
+.card-projeto {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 22%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.card-projeto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-projeto h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.card-projeto p {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #aaa;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .card-projeto {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-projeto {
+        width: 100%;
+    }
+}
+
+/* Botão "Ver mais" no GitHub */
+.btn-projetos-container {
+    text-align: end;
+    margin-top: 2rem; /* Distância dos cards */
+}
+
+.btn-projetos {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    min-width: 200px;
+}
+
+.btn-projetos:hover {
+    background-color: #555;
+}
+
+/* A bolinha com a seta */
+.seta {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .seta {
+        font-size: 1rem;
+    }
+}
