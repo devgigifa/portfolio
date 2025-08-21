@@ -1,0 +1,115 @@
+:root{
+  --bg: #0b0b11;
+  --card: #141422;
+  --card-hover: #1b1b2d;
+  --text: #f1f1f4;
+  --muted: #b8b8c7;
+  --accent: #b388ff; /* lilás */
+  --accent-2: #bfcab3; /* verde oliva claro (suave) */
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(179,136,255,.18), transparent 60%),
+              radial-gradient(1000px 600px at 120% 0%, rgba(191,202,179,.12), transparent 60%),
+              var(--bg);
+  color:var(--text);
+}
+a{color:inherit}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+header.page-header{
+    margin-top: 60px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; margin-bottom:26px;
+}
+.title{
+  display:flex; flex-direction:column; gap:4px;
+}
+.title h1{margin:0; font-size: clamp(22px, 2.4vw, 34px);}    
+.title p{margin:0; color:var(--muted)}
+
+.back-link{
+  text-decoration:none; border:1px solid rgba(255,255,255,.12);
+  padding:10px 14px; border-radius: 999px; transition:.2s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+}
+.back-link:hover{border-color:rgba(255,255,255,.22); transform: translateY(-1px)}
+
+/* Filtro / controles (opcional, já funcional) */
+.toolbar{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 12px}
+.search{flex:1 1 260px; min-width: 220px;}
+input[type="search"]{
+  width:100%; padding:12px 14px; border-radius: 12px; border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06); color: var(--text); outline:none;
+}
+input[type="search"]::placeholder{color:#a6a6b6}
+.chip{
+  border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:8px 12px; cursor:pointer;
+  background: rgba(255,255,255,.04);
+}
+
+/* Grade da galeria */
+.certs-grid{
+  display:grid; gap:16px; margin-top:12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cert-card{
+  position:relative; overflow:hidden; border-radius: var(--radius);
+  background: var(--card); box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  /* Mantém retângulo na horizontal (A4 landscape ~1.414) */
+  aspect-ratio: 7 / 5; 
+  display:flex; align-items:center; justify-content:center;
+}
+.cert-card:hover{ transform: translateY(-2px); background: var(--card-hover); border-color: rgba(255,255,255,.16)}
+
+.cert-card img{
+  width:100%; height:100%; object-fit: cover; display:block;
+  filter: saturate(1.02);
+}
+.cert-badge{
+  position:absolute; left:10px; top:10px; font-size:12px; padding:6px 10px; border-radius:999px;
+  background: rgba(179,136,255,.15); color: #e7dcff; border:1px solid rgba(179,136,255,.4);
+}
+.cert-caption{
+  position:absolute; left:0; right:0; bottom:0; padding:10px 12px; font-size:14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.65) 70%);
+  color:#f7f7fb;
+}
+.cert-caption small{display:block; color:#cfd0df; opacity:.9}
+
+/* Lightbox */
+.lightbox{ position: fixed; inset:0; display:none; place-items:center; background: rgba(5,6,10,.75); z-index: 50; }
+.lightbox.show{ display:grid; }
+.lightbox-content{ position:relative; width:min(92vw, 1200px); }
+.lightbox-figure{ background:#000; border-radius: 16px; overflow:hidden; border:1px solid rgba(255,255,255,.15); box-shadow: var(--shadow); }
+.lightbox-figure img{ width:100%; height:auto; display:block; }
+.lightbox-caption{ padding:10px 14px; color:#e9e9f6; font-size:14px; background: #0c0c11; border-top:1px solid rgba(255,255,255,.08)}
+
+.lightbox-close, .lightbox-prev, .lightbox-next{
+  position:absolute; top:50%; transform: translateY(-50%);
+  border:none; cursor:pointer; padding:12px; border-radius: 999px;
+  background: rgba(255,255,255,.1); color:#fff; backdrop-filter: blur(6px);
+}
+.lightbox-close{ top:-18px; right:-18px; transform:none; }
+.lightbox-prev{ left:-58px; }
+.lightbox-next{ right:-58px; }
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover{ background: rgba(255,255,255,.18)}
+
+@media (max-width: 800px){
+  .lightbox-prev{ left:6px; top:auto; bottom: 10px; transform:none }
+  .lightbox-next{ right:6px; top:auto; bottom: 10px; transform:none }
+  .lightbox-close{ right:10px; top:10px }
+}

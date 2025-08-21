@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículo • Giovanna Alves</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1534/1534067.png" />
+  <style>
+    :root{
+      --bg: #0b0b11;
+      --card: #141422;
+      --card-hover: #1b1b2d;
+      --text: #f1f1f4;
+      --muted: #b8b8c7;
+      --accent: #b388ff; /* lilás */
+      --accent-2: #bfcab3; /* verde oliva claro */
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(179,136,255,.18), transparent 60%),
+                  radial-gradient(1000px 600px at 120% 0%, rgba(191,202,179,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+    }
+
+    .container{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    header.page-header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; margin-bottom:26px;
+    }
+    .title{display:flex; flex-direction:column; gap:4px;}
+    .title h1{margin:0; font-size: clamp(22px, 2.4vw, 34px);}    
+    .title p{margin:0; color:var(--muted)}
+
+    .back-link, .btn-download{
+      text-decoration:none; border:1px solid rgba(255,255,255,.12);
+      padding:10px 14px; border-radius: 999px; transition:.2s ease;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+      color: var(--text);
+    }
+    .back-link:hover, .btn-download:hover{border-color:rgba(255,255,255,.22); transform: translateY(-1px)}
+
+    .pdf-viewer{
+      width:100%; height:80vh;
+      border:1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: var(--card);
+    }
+    .pdf-viewer iframe{
+      width:100%; height:100%; border:none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <div class="title">
+        <h1>Currículo</h1>
+        <p>Segue abaixo meu currículo completo em PDF</p>
+      </div>
+      <div style="display:flex; gap:12px">
+        <a class="back-link" href="index.html">Voltar</a>
+        <a class="btn-download" href="assets/Currículo_Giovanna-Alves.pdf" download>⬇ Baixar PDF</a>
+      </div>
+    </header>
+
+    <div class="pdf-viewer">
+      <iframe src="assets/Currículo_Giovanna-Alves.pdf"></iframe>
+    </div>
+  </div>
+</body>
+</html>
